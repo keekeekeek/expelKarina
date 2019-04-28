@@ -7,14 +7,18 @@ import java.io.PrintWriter;
 
 public class Counter extends HttpServlet {
 
-    private volatile int counter = 0;
+    private int counter = 0;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println(counter);
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         counter++;
         PrintWriter out = response.getWriter();
-        out.println("<html><head><meta charset=\"UTF-8\"></head>" +
-                "<body><h1 style = \"font-size: 18px;\">" + counter + "</h1></body></html>");
+        out.println(counter);
     }
 
 }
