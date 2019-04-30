@@ -1,24 +1,39 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <link href="styles.css" rel="stylesheet" type="text/css">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="scripts.js" defer></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="scripts.js"></script>
     <script>
-        $(document).ready(function() {
-            $.get("Counter", function(responseText) {
-                $("#number").text(responseText);
-            });
+        $(document).ready(function () {
+            sendRequest('none');
         });
     </script>
 </head>
 <body>
-<div id = "content">
-    <button onClick="sendExpel()">Отчислить Карину</button>
+<div id="content">
+        Состояние Карины:
+    <span id="alive">
+        учится
+    </span>
+    <span id="dead">
+        отчислена
+    </span>
+    <button onClick="sendRequest('expel')" id="expelButton">Отчислить Карину</button>
+    <button onClick="sendRequest('restore')" id="restoreButton">Восстановить Карину</button>
+    <div id="results">
+        <span id="expel">
 Карину отчислили:
-    <div id="number"></div>
-раз(a)
+    <div class="number" id="expNum"></div>
+            раз(a),</span>
+        <span id="restore">
+            восстановили:
+            <div class="number" id="resNum"></div>
+            раз(а)
+        </span>
+    </div>
 </div>
 </body>
 </html>

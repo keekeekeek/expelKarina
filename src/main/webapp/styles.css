@@ -17,6 +17,12 @@ button {
 button:hover {
     box-shadow: 0px 0px 2px 2px aquamarine;
 }
+#alive {
+    color: green;
+}
+#dead {
+    color: red;
+}
 #content {
     padding-top: 100px;
     margin: auto;
@@ -24,7 +30,7 @@ button:hover {
     padding-left: 50px;
     background-color: azure;
 }
-#number {
+.number {
     display: inline;
     min-width: 50px;
 }
@@ -33,18 +39,27 @@ button:hover {
         width: 100%;
         font-size: 30px;
     }
+    span {
+        display: block;
+    }
     button {
         width: 100%;
         position: absolute;
-        font-size: 55px;
-        bottom: 0px;
-        height: 200px;
+        font-size: 25px;
+        height: 100px;
         margin: auto;
+    }
+    #expelButton {
+        bottom:0px;
+    }
+    #restoreButton {
+        bottom:105px;
     }
     #content {
         padding-left: 0px;
+        padding-top: 40px;
     }
-    #number {
-        font-size: 60px;
+    .number {
+        font-size: 40px;
     }
 }
